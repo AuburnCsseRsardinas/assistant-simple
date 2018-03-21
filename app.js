@@ -31,14 +31,14 @@ app.use(bodyParser.json());
 var conversation = new watson.ConversationV1({
   // If unspecified here, the ASSISTANT_USERNAME and ASSISTANT_PASSWORD env properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-  username: process.env.ASSISTANT_USERNAME || '<username>',
-  password: process.env.ASSISTANT_PASSWORD || '<password>',
+  username: process.env.ASSISTANT_USERNAME || 'c9d55002-63a3-46a5-8482-aa29cfc60063',
+  password: process.env.ASSISTANT_PASSWORD || '6DCXAcDyWaev',
   version_date: '2018-02-16'
 });
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
-  var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
+  var workspace = process.env.WORKSPACE_ID || 'a6a2db51-0578-4671-bd73-f9f9e37ce9d1';
   if (!workspace || workspace === '<workspace-id>') {
     return res.json({
       'output': {
